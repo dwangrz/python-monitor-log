@@ -1,0 +1,5 @@
+.venv
+.vscode
+__MACOSX
+FlaskExercise/__pycache__
+*.DS_Store
