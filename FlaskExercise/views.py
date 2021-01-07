@@ -1,6 +1,5 @@
 from flask import flash, render_template, redirect, request
-from FlaskExercise import app, logger
-from flask import Flask
+from FlaskExercise import app
 
 
 @app.route('/')
@@ -8,13 +7,13 @@ def home():
     log = request.values.get('log_button')
     if log:
         if log == 'info':
-            logger.info('No issue.')
+            app.logger.info('No issue.')
         elif log == 'warning':
-            logger.warning('Warning occurred.')
+            app.logger.warning('Warning occurred.')
         elif log == 'error':
-            logger.error('Error occurred.')
+            app.logger.error('Error occurred.')
         elif log == 'critical':
-            logger.critical('Critical error occurred.')
+            app.logger.critical('Critical error occurred.')
     return render_template(
         'index.html',
         log=log
